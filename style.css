@@ -1,0 +1,40 @@
+.square {
+    background-color: red;
+    height: 150px;
+    width: 150px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.box {
+    height: 500px;
+    /* creates two invisible axis x and y */
+    display: flex;
+    /* flex-dir = the direction of the contents x axis or y, row or colum */
+    flex-direction: row;
+    /* justify content = aligns the content of the y axis/main axis  default is flex start (items postioned at the start)*/
+    justify-content: space-evenly;
+    /* aligns the children along the y axis note: baseline aligins the text no matter if smaller or larger*/
+    align-items: center;
+    /* dosent force all of the children to be on the same line default is set to no wrap */
+    flex-wrap: wrap;
+    /* only is availible when we have flex wrap and it aligns the two rows */
+    align-content: center;
+    /* adds a gap betweesn each items */
+    gap: 5px;
+}
+.square.one { 
+    /* for now it has no effect on box 1 */
+    /* allows an item to grow if it has enough space right now it overrides our previous proportions*/
+    /* flex-grow: 1; */
+    /* items shrink faster with higher the number if theres no space left aka:prioritised to be shrunken */
+    /* flex-shrink: 5; */
+    /* this overrides the previous proportions and allows for the above to work */
+    /* flex-basis: 300px; */
+    /* a better version for all of the above is flex; and is the shorthand version
+    felx has all of the above values eg: flex: 0 0 0;*/
+    /* flex: 1; */
+    /* better way to align individula items along the given axis */
+    align-self: baseline;
+    /* order value auto set to 0 -1 is the start and 1 is the end but messes with ths semantics */
+    order: -1;
+}
